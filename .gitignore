@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Hardhat build output
+cache/
+artifacts/
+typechain-types/
+
+# Ignition deployments (keep modules, ignore the output)
+ignition/deployments/
+
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.*.local
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
