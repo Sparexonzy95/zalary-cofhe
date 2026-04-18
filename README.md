@@ -1,14 +1,14 @@
-# Zalary — Confidential On-Chain Payroll
+# Zalary  Confidential On-Chain Payroll
 
-> Payroll is the highest-frequency financial operation at every organization on earth. It's also the one use case that cannot exist on public blockchains today — because salaries are not supposed to be public. Zalary fixes that with Fhenix CoFHE.
+> Payroll is the highest-frequency financial operation at every organization on earth. It's also the one use case that cannot exist on public blockchains today  because salaries are not supposed to be public. Zalary fixes that with Fhenix CoFHE.
 
-Submitted for **Fhenix Buildathon — Wave 2**.
+Submitted for **Fhenix Buildathon  Wave 2**.
 
 ---
 
 ## The Problem Nobody Has Solved
 
-Every organization  from a 3-person DAO to a 50,000-person enterprise — runs payroll. Weekly. Monthly. Forever. It is the single most repeated financial operation in the economy.
+Every organization  from a 3-person DAO to a 50,000-person enterprise  runs payroll. Weekly. Monthly. Forever. It is the single most repeated financial operation in the economy.
 
 And it is structurally incompatible with public blockchains.
 
@@ -16,9 +16,9 @@ And it is structurally incompatible with public blockchains.
 - **DAOs can't use it.** Contributor salaries become public the moment they hit-chain. Analytics tools scrape them, competitors poach them, recruiters spam them.
 - **Crypto-native companies can't use it.** Every payroll transaction becomes a press release for your burn rate and your org chart.
 
-Today these groups settle through off-chain rails — Deel, Rippling, Remote, Gusto, traditional banks  and accept the settlement delays, fees, and counterparty risk that come with them. They want on-chain settlement. They cannot accept on-chain transparency.
+Today these groups settle through off-chain rails  Deel, Rippling, Remote, Gusto, traditional banks  and accept the settlement delays, fees, and counterparty risk that come with them. They want on-chain settlement. They cannot accept on-chain transparency.
 
-**This is a $200B+ annual TAM gap.** Global payroll is one of the largest software markets in the world. On-chain payroll's current penetration is effectively zero — not because the infrastructure is bad, but because the privacy is wrong.
+**This is a $200B+ annual TAM gap.** Global payroll is one of the largest software markets in the world. On-chain payroll's current penetration is effectively zero  not because the infrastructure is bad, but because the privacy is wrong.
 
 Zalary is the infrastructure that fixes the privacy so the market can open.
 
@@ -53,7 +53,7 @@ The market that has been asked-about for years but cannot move until confidentia
 | **Compliance-safe** | ✅ | ❌ | ✅ |
 | **Required to trust hardware** | N/A | N/A | ❌ no TEE, no SGX |
 
-Zalary delivers the settlement speed of on-chain payroll and the privacy of traditional payroll — with no trusted hardware, no custodian, and no centralized KMS. That combination has not existed before Fhenix CoFHE.
+Zalary delivers the settlement speed of on-chain payroll and the privacy of traditional payroll with no trusted hardware, no custodian, and no centralized KMS. That combination has not existed before Fhenix CoFHE.
 
 ---
 
@@ -63,7 +63,7 @@ Zalary delivers the settlement speed of on-chain payroll and the privacy of trad
 
 ```
 1. Create a payroll run (choose token, deadline, employee count)
-2. Upload a CSV of employees + salaries — each amount encrypted client-side with @cofhe/sdk
+2. Upload a CSV of employees + salaries  each amount encrypted client-side with @cofhe/sdk
 3. Fund the payroll employer's cUSDC moves into an encrypted escrow
 4. Activate the run employees can now claim
 5. After the deadline, withdraw any unclaimed escrow
@@ -77,14 +77,14 @@ Zalary delivers the settlement speed of on-chain payroll and the privacy of trad
 3. Convert cUSDC → USDC any time via the built-in SwapRouter
 ```
 
-At no point does any amount  salary, escrow, withdrawal — appear anywhere on-chain in readable form. A third-party explorer sees "employee X claimed from payroll Y" and nothing else.
+At no point does any amount  salary, escrow, withdrawal  appear anywhere on-chain in readable form. A third-party explorer sees "employee X claimed from payroll Y" and nothing else.
 
 ### What makes this actually work
 
-- **Encrypted escrow accounting** that stays correct even when FHE transfers silently fail (4 invariants, all tested — see below)
+- **Encrypted escrow accounting** that stays correct even when FHE transfers silently fail (4 invariants, all tested  see below)
 - **Keyed withdrawals** so one stuck claim never blocks another employee or another run
-- **Two-step claims** with Threshold Network proof verification on-chain — employees get mathematically confirmed receipts
-- **Retry path** — if employer underfunded the escrow, the employee's failed claim can be cancelled and retried after a top-up without any state corruption
+- **Two-step claims** with Threshold Network proof verification on-chain  employees get mathematically confirmed receipts
+- **Retry path**  if employer underfunded the escrow, the employee's failed claim can be cancelled and retried after a top-up without any state corruption
 
 ---
 
@@ -106,13 +106,13 @@ Chain ID: `84532`
 
 **Wave 2 is the protocol.** Three production-grade contracts, 42 tests, all four escrow invariants proven, deployed and live on Base Sepolia. The idea is now code you can interact with on-chain today.
 
-| | Wave 1 — Ideation | Wave 2 — Protocol (this submission) |
+| | Wave 1  Ideation | Wave 2  Protocol (this submission) |
 |---|---|---|
 | **What existed** | Pitch, market thesis, architecture sketch | 3 deployed contracts, 42 passing tests, live on Base Sepolia |
 | **Encryption primitive** | (Planned) | `euint64` via Fhenix CoFHE |
 | **Client SDK** | (Planned) | `@cofhe/sdk` v0.4.0 client-side encryption |
 | **Decryption** | (Planned) | Threshold Network signatures, verified on-chain via `FHE.verifyDecryptResult` |
-| **Trust model** | (Planned) | Lattice-based cryptography — no TEE, no KMS, no trusted hardware |
+| **Trust model** | (Planned) | Lattice-based cryptography  no TEE, no KMS, no trusted hardware |
 | **Status** | ✅ Idea validated ($500 grant) | ✅ **Working on-chain protocol** |
 
 ### What Wave 2 shipped
@@ -145,7 +145,7 @@ Three contracts, clean separation:
 
 **PayrollVault** — The core business contract. Manages the full payroll lifecycle: creation → salary allocation → escrow funding → activation → employee claims → closure → leftover withdrawal. Every piece of financial data (salaries, escrow, funding status) is encrypted. Enforces four critical escrow invariants that prevent accounting drift when FHE transfers silently fail.
 
-**SwapRouter**  The USDC ↔ cUSDC gateway. Deposit is public (USDC in → cUSDC minted). Withdrawal is private  amount revealed only to the withdrawing user via Threshold Network decryption. Pending withdrawals are keyed by `bytes32 withdrawKey` (not just wallet address), so one stuck request never blocks another for the same user — critical for payroll, where every claim triggers a downstream withdrawal.
+**SwapRouter**  The USDC ↔ cUSDC gateway. Deposit is public (USDC in → cUSDC minted). Withdrawal is private  amount revealed only to the withdrawing user via Threshold Network decryption. Pending withdrawals are keyed by `bytes32 withdrawKey` (not just wallet address), so one stuck request never blocks another for the same user  critical for payroll, where every claim triggers a downstream withdrawal.
 
 ---
 
@@ -173,14 +173,14 @@ After deadline:
    → On-chain: FHE.gte(escrow, salary) → transfer attempt
    → Stores: okHandle + requestId (private, msg.sender-gated)
 
-2. // Off-chain: read okHandle from getMyPendingOkHandle()
-   // Decrypt via Threshold Network: decryptForTx(okHandle).withPermit().execute()
+2.  Off-chain: read okHandle from getMyPendingOkHandle()
+    Decrypt via Threshold Network: decryptForTx(okHandle).withPermit().execute()
 
 3a. If ok == true  → finalizeClaim(payrollId, requestId, true, sig)
                      → Employee marked as claimed ✓
 
 3b. If ok == false → cancelPendingClaim(payrollId, requestId, false, sig)
-                     → State cleared — employer tops up → employee retries
+                     → State cleared  employer tops up → employee retries
 ```
 
 ### Deposit/Withdrawal Flow
@@ -207,7 +207,7 @@ SwapRouter.cancelPendingWithdraw(key, ...)           → clears stuck request (o
 
 FHE token transfers **never revert** on insufficient balance  they silently move zero and return `ebool(false)`. This is by design (reverting would leak balance information). Every function that updates escrow gates its accounting on the actual transfer result.
 
-These invariants are not decorative — they are the difference between a demo and a protocol that can hold real money.
+These invariants are not decorative they are the difference between a demo and a protocol that can hold real money.
 
 ### Invariant 1  fundPayroll: escrow never overstated
 ```solidity
