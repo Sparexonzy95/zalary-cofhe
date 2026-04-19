@@ -18,13 +18,14 @@ Zalary is a **fully working confidential payroll protocol** on Fhenix CoFHE. Com
 
 ---
 
-## Proof This Is Real (Not a Concept)
+## Live System (Verify in 3 Minutes)
 
-- ✅ **3 contracts deployed** on Base Sepolia
-- ✅ **42/42 tests passing** (including 4 escrow invariant proofs)
-- ✅ **Security audit completed**: 19 findings, all fixed
-- ✅ **Full end-to-end payroll flow** working on-chain
-- ✅ **Live addresses verifiable** on BaseScan (below)
+Zalary is deployed, tested, and auditable right now. No screenshots, no slide decks. Every claim below is verifiable from this repo or on-chain.
+
+- **3 contracts live** on Base Sepolia (addresses below, click to verify on BaseScan)
+- **42/42 tests passing** locally, including 4 escrow invariant proofs
+- **Security audit resolved**: 19 findings, every fix present in the deployed bytecode
+- **Full end-to-end payroll flow** working: fund, claim, finalize, withdraw, retry
 
 | Contract | Address |
 |---|---|
@@ -54,6 +55,7 @@ Zalary makes confidential payroll possible on-chain for the first time.
 |---|---|---|---|
 | **Salary privacy** | ✅ private | ❌ fully public | ✅ FHE-encrypted |
 | **Settlement speed** | 2 to 5 days | seconds | seconds |
+| **Counterparty risk** | platform holds funds | none | none |
 | **Trust model** | platform custody | public ledger | no custody, no trusted hardware |
 
 On-chain speed. Traditional privacy. No TEE, no custodian, no KMS.
@@ -61,6 +63,8 @@ On-chain speed. Traditional privacy. No TEE, no custodian, no KMS.
 ---
 
 ## Who It's For
+
+Any team that pays people in crypto but cannot expose salaries publicly.
 
 - **Crypto-native companies and DAOs** paying contributors in stablecoins
 - **Web3 treasuries** distributing grants or contributor comp privately
@@ -70,7 +74,9 @@ On-chain speed. Traditional privacy. No TEE, no custodian, no KMS.
 
 ## Security (Core Innovation)
 
-FHE transfers do not revert. **They fail silently** and return `ebool(false)`. This breaks naive escrow accounting.
+Normal payroll systems assume transfers either succeed or revert. FHE breaks this assumption. Transfers can fail silently without reverting, returning `ebool(false)` instead of throwing.
+
+This is by design (reverting would leak balance information), but it breaks naive escrow accounting.
 
 We built **4 invariants** to guarantee correctness even when transfers fail silently. Every invariant is tested and passing.
 
@@ -84,6 +90,8 @@ We built **4 invariants** to guarantee correctness even when transfers fail sile
 ---
 
 ## Try It (3 commands)
+
+Run this locally to verify the full protocol in under 60 seconds:
 
 ```bash
 npm install
@@ -190,4 +198,4 @@ MIT
 
 **Zalary is the first working confidential payroll system on Fhenix.**
 
-Not a simulation. Not a demo. Real encrypted payroll with cryptographically enforced correctness, deployed on-chain, audited, and reproducibly tested.
+Not a simulation. Not a design. A fully deployed, cryptographically enforced payroll system with real escrow, real claims, and real privacy.
