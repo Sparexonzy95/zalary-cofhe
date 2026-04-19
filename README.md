@@ -14,7 +14,7 @@ Zalary is a **fully working confidential payroll protocol** on Fhenix CoFHE. Com
 
 **Think Stripe for payroll, but salaries are never visible, even on-chain.**
 
-🎥 [Walkthrough video](https://youtu.be/U8S_2PYxBMw?feature=shared)
+🎥 [Walkthrough video of testing and deployment](https://youtu.be/U8S_2PYxBMw?feature=shared)
 
 ---
 
