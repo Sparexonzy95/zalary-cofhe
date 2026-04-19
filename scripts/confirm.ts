@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
 const ADDRESSES = {
-  ConfidentialToken: "0x24902606cea8773ba88947B0FA8CD8c14367fD82",
-  PayrollVault:      "0x247a454B99c2Fa901389414a3AEf09A36da77AB3",
-  SwapRouter:        "0x600de9c607b3fdb6185b6De74cd9995eD2132Fc1",
+  ConfidentialToken: "0xD1A0Ecf8f8430F37627b8B329acb3Bc027F136cF",
+  PayrollVault:      "0xdDc2C6A6d9B28680e0ca92fED9DffAB173CD6EDa",
+  SwapRouter:        "0x97f27875c279907f7d461Eb32375BF1d4c294613",
 };
 
 async function main() {
