@@ -193,7 +193,7 @@ Three contracts, clean separation:
 2. uploadAllocations(payrollId, employees, encryptedSalaries[])
 3. finalizeAllocations(payrollId)
 4. fundPayroll(payrollId, encryptedAmount)          ← repeatable for top-ups
-5. // Off-chain: decrypt fundedOnce handle to prove funding succeeded
+5. Off-chain: decrypt fundedOnce handle to prove funding succeeded
 6. activatePayroll(payrollId, fundedPlaintext, fundedSig)
 
 After deadline:
@@ -208,8 +208,8 @@ After deadline:
    → On-chain: FHE.gte(escrow, salary) → transfer attempt
    → Stores: okHandle + requestId (private, msg.sender-gated)
 
-2. // Off-chain: read okHandle from getMyPendingOkHandle()
-   // Decrypt via Threshold Network: decryptForTx(okHandle).withPermit().execute()
+2.  Off-chain: read okHandle from getMyPendingOkHandle()
+    Decrypt via Threshold Network: decryptForTx(okHandle).withPermit().execute()
 
 3a. If ok == true  → finalizeClaim(payrollId, requestId, true, sig)
                      → Employee marked as claimed ✓
