@@ -174,7 +174,7 @@ All technical depth lives in `/docs`:
 
 | Wave | Milestone | Status |
 |---|---|---|
-| **Wave 1** | Ideation | ✅ Complete ($500 grant) |
+| **Wave 1** | Ideation | ✅ Completed |
 | **Wave 2** | Protocol: 3 contracts, 42 tests, audit | ✅ **This submission** |
 | **Wave 3** | Frontend migration to `@cofhe/sdk` | 🔜 Next |
 | **Wave 4** | Gas optimization, recurring schedules | Planned |
