@@ -150,7 +150,7 @@ Three contracts, clean separation. All financial data is `euint64` encrypted.
 |---|---|---|
 | **Stage** | Ideation | Working protocol |
 | **Output** | Pitch and architecture | 3 deployed contracts, 42 tests, audit resolved |
-| **Result** | ✅ $500 grant | ✅ Live on Base Sepolia |
+| **Result** | ✅ completed | ✅ Live on Base Sepolia |
 
 ---
 
