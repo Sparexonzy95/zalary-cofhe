@@ -176,8 +176,8 @@ All technical depth lives in `/docs`:
 |---|---|---|
 | **Wave 1** | Ideation | ✅ Completed |
 | **Wave 2** | Protocol: 3 contracts, 42 tests, audit | ✅ **This submission** |
-| **Wave 3** | Frontend migration to `@cofhe/sdk` | 🔜 Next |
-| **Wave 4** | Gas optimization, recurring schedules | Planned |
+| **Wave 3** |Backend integration layer | 🔜 Next |
+| **Wave 4** |Frontend migration to `@cofhe/sdk` | Planned |
 | **Wave 5** | Mainnet, institutional onboarding | Planned |
 
 ---
