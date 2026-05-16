@@ -184,7 +184,7 @@ All technical depth lives in `/docs`:
 
 ## Team
 
-Zalary is built by a small team of onchain engineers with backgrounds in DeFi protocol engineering, confidential computing, and payroll infrastructure. We shipped Wave 1 (ideation) solo, earned the $500 grant, and delivered Wave 2 (full protocol with audit) within the deliverable window.
+Zalary is built by a small team of onchain engineers with backgrounds in DeFi protocol engineering, confidential computing, and payroll infrastructure. We shipped Wave 1 (ideation) solo, and delivered Wave 2 (full protocol with audit) within the deliverable window.
 
 ---
 
